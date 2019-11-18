@@ -88,4 +88,4 @@ animX comes with a lot of demos to get you started. These are available in the [
 
 ### Documentation
 
-You can read the documentation over [here](wiki)
+You can read the documentation over [here](https://github.com/YoungNeer/animX/wiki)
