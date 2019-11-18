@@ -6,7 +6,7 @@
 
 animX is all about handling animations in a manner that makes your code much more declarative, much more readable, and much more shorter.
 
-## Features of animX:-
+## Features of animX:
 -------------------------
 
 - Has special Animation instances with animation modes like `loop`, `bounce`, `rewind`, etc!
@@ -82,11 +82,10 @@ Just drop the package (by the name `animx`) in a seperate folder and require it:
 animx=require 'animx
 ```
 
-
 ### Running Demos
 
 animX comes with a lot of demos to get you started. These are available in the [demos](TODO) branch. You can run them with the latest (as of now) version of Love2D (11.3)
 
 ### Documentation
 
-You can read the documentation over [here](DOCUMENTATION.MD)
+You can read the documentation over [here](wiki)
