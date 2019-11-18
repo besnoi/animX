@@ -1,0 +1,13 @@
+<TextureAtlas imageName="whatever">
+	<SubTexture name="1" x="0" y="0" width="72" height="97"/>
+	<SubTexture name="2" x="72" y="0" width="72" height="97"/>
+	<SubTexture name="3" x="144" y="0" width="72" height="97"/>
+	<SubTexture name="4" x="0" y="97" width="72" height="97"/>
+	<SubTexture name="5" x="72" y="97" width="72" height="97"/>
+	<SubTexture name="6" x="144" y="97" width="72" height="97"/>
+	<SubTexture name="7" x="0" y="194" width="72" height="97"/>
+	<SubTexture name="8" x="72" y="194" width="72" height="97"/>
+	<SubTexture name="9" x="144" y="194" width="72" height="97"/>
+	<SubTexture name="10" x="0" y="291" width="72" height="97"/>
+	<SubTexture name="11" x="72" y="291" width="72" height="97"/>
+</TextureAtlas>

@@ -1,0 +1,14 @@
+<TextureAtlas imageName="animation">
+<!--Hey Look I can have comments!-->
+	<SubTexture name="1" x="267" y="183" width="24" height="24"/>
+	<SubTexture name="2" x="291" y="183" width="24" height="24"/>
+
+<!--and blank lines too-->
+	<SubTexture name="3" x="315" y="183" width="24" height="24"/>
+	<SubTexture name="4" x="339" y="183" width="24" height="24"/>
+	<whatever name="5" x="363" y="183" width="24" height="24"/>
+<!--animX doesn't care about tag names-->
+	<SubTexture name="6" x="387" y="183" width="24" height="24"/>
+	<SubTexture name="7" x="411" y="183" width="24" height="24"/>
+</TextureAtlas>
+<!--however TextureAtlas has special meaning to animX>

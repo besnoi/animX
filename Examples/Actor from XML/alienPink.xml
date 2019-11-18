@@ -1,0 +1,14 @@
+<TextureAtlas imagePath="sheet.png">
+<!--Originally Kenney's asset (it still is). I only replaced 'alienPink_' with '' to make it work with animX and name alienPink.png was changed to idle.png. That's it!!-->
+	<SubTexture name="alienPink.png" x="70" y="92" width="66" height="92"/>
+	<SubTexture name="climb1.png" x="70" y="0" width="66" height="92"/>
+	<SubTexture name="climb2.png" x="135" y="379" width="66" height="92"/>
+	<SubTexture name="duck.png" x="0" y="380" width="69" height="71"/>
+	<SubTexture name="hurt.png" x="0" y="288" width="69" height="92"/>
+	<SubTexture name="jump.png" x="69" y="286" width="67" height="93"/>
+	<SubTexture name="stand.png" x="69" y="379" width="66" height="92"/>
+	<SubTexture name="swim1.png" x="0" y="193" width="69" height="95"/>
+	<SubTexture name="swim2.png" x="0" y="96" width="70" height="97"/>
+	<SubTexture name="walk1.png" x="69" y="193" width="68" height="93"/>
+	<SubTexture name="walk2.png" x="0" y="0" width="70" height="96"/>
+</TextureAtlas>
