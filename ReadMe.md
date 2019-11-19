@@ -71,7 +71,7 @@ end
 
 Note that we are not doing ```animx.update(dt)``` in ``love.update`` only because there's nothing else in ``love.update`` and animX overrides it by default making work a little easier for us in such cases (where all that `love.update` contains is `animx.update`)
 
-There are also other stuff such texture styles, animation modes, animation handlers, etc which we didn't talk here. But I've dedicated a short tutorial for that over [here](DOCUMENTATION.MD)
+There are also other stuff such texture styles, animation modes, animation handlers, etc which we didn't talk here. But I've dedicated a short tutorial for that over [here](Examples)
 
 
 ### Installing animX
