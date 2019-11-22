@@ -230,7 +230,7 @@ function Animation:setDelay(frame,delay)
 		delay,frame=frame
 		self.duration={delay}
 		self.cache={self:getSize()}
-		return
+		return self
 	end
 	--Set delay for only one frame
 	assert(frame>=1 and frame<=self:getSize(),"animX Error: Frame is out of bounds!")
