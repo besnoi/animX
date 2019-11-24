@@ -4,7 +4,7 @@ anim=animx.newAnimation{
 	img='glitch_crab.png',
 	spritesPerRow=6,
 	interval=.03,
-	tileHeight=516/4
+	tileHeight=516/4  -- try removing this and adding noOfFrames=24
 }:loop()
 --[[
 	Note that unlike 'Working with TileSource' example we don't give
