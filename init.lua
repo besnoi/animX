@@ -13,6 +13,16 @@ local function fileExists(url)
 	       love.filesystem.getInfo(url).type=="file"
 end
 
+--Borrowed from [euler](https://github.com/YoungNeer/euler)
+function round(value,precision)
+	local temp = 10^(precision or 0)	
+	if value >= 0 then 
+		return math.floor(value * temp + 0.5) / temp
+	else 
+		return math.ceil(value * temp - 0.5) / temp 
+	end
+end
+
 --removes the path and only gets the filename
 local function removePath(filename)
 	local pos=1
@@ -93,15 +103,30 @@ function animx.newAnimation(params)
 
 		--The tile-height will by default be the height of the image!
 		local qw=params.qw or params.quadWidth or params.frameWidth or params.tileWidth
-		local qh=params.qh or params.quadHeight or params.frameHeight or params.tileHeight or img:getHeight()
+		local qh=params.qh or params.quadHeight or params.frameHeight or params.tileHeight
 		local frames=params.frames or {}
 		local spr=params.spr or params.spritesPerRow or params.tilesPerRow or params.quadsPerRow
 		quads=params.quads or {}
+
+		if spr and nq then
+			assert(nq>=spr,"animX Error: No of sprites per row can't be less than total number of quads!!!")
+		end
 
 		--[[
 			User has to give atleast one of quad-width and
 			number of sprites per row to calculate no of quads
 		]]--
+
+		--if user has not given sprites per row then let qh simply be image height
+		if not spr then 
+			qh=qh or img:getHeight()
+		else
+			if not qh then
+				assert(nq,"animX Error: You have to give number of quads in this case!!!")
+			end
+			qh=qh or img:getHeight()/(nq/spr)
+		end
+
 		if qw then
 			if #frames>0 then
 				--If user has given us a bunch of frames then we set this to zero if nil
@@ -135,7 +160,7 @@ function animx.newAnimation(params)
 		end
 
 		--If user has not given the tileWidth then calculate it based on number of sprites per row
-		if nq>0 then
+		if nq>0 and spr then
 			qw=qw or img:getWidth()/spr
 		end
 
@@ -160,7 +185,9 @@ function animx.newAnimation(params)
 		--We need the quad dimensions if user has not given us a bunch of quads
 		if #quads==0 then
 			assert(qw and qh,"animX Error: Quad dimensions coudn't be calculated in `newAnimation`!")
-		end
+			--IMPORTANT: We want integers not highly precise floats or doubles
+			qw,qh=round(qw),round(qh)
+		end		
 
 		--Calculate offset from the startpoint
 		if startPoint then
