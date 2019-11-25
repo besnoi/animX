@@ -29,6 +29,24 @@ animX is all about handling animations in a manner that makes your code much mor
 
 ## A Quick Walkthrough
 
+Working with symmetric spritesheets is a *hell* lot easier with animX. Let's say we have this spritesheet:-
+<p align='center'>
+<img src='Examples/Exporting%20Animation/glitch_crab.png' title="The SpriteSheet for crab animation (Credit- Glitch)"><br/>
+</p>
+
+There are 6 sprites per row and a total of 24 images!! So you do just this:-
+
+```lua
+anim=animx.newAnimation{
+	img='glitch_crab.png',   --url/reference to the image
+	spritesPerRow=6,
+	noOfFrames=24
+}:loop()
+```
+And that's it! You loaded 24 quads in just four lines! (The last line only loops the animation which ofcourse is not necessary!)
+
+> But what about huge non-symmetric spritesheets?
+
 Let's say we have this spritesheet by Kenney and we want to animate this in Love2D (Note this spritesheet is unsymmetric with alternating width and height for each frame)
 
 <p align='center'>
