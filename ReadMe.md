@@ -16,7 +16,7 @@ animX is all about handling animations in a manner that makes your code much mor
 - Allows loading group of animations and all animations for an *actor* from a metafile
 - Supports callback functions like `onSwitch`, `onFrameChange`,`onAnimOver`,`onCycleOver`,etc just like [Walt](https://github.com/davisdude/Walt)
 - Allows creating animation from single as well as multiple images (for *Actors* I mean)
-- Has a very comfortable animation extraction system supporting numerous algorithms**\***
+- Has a very comfortable animation extraction system supporting numerous algorithms **\***
 - After extracting animations you can export them to XML (again as a single entity or as group of animations)
 - Also supports animation's source styles like `rough`, `smooth` (just like Katsudo)
 - Has a number of aliases to make you feel it's *your* library and *you* wrote it!
