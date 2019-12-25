@@ -13,6 +13,15 @@ local function fileExists(url)
 	       love.filesystem.getInfo(url).type=="file"
 end
 
+local imgCache = {}
+
+local function newImage(path)
+	if not imgCache[path] then
+        imgCache[path] = love.graphics.newImage(path)
+    end
+    return imgCache[path]
+end
+
 --Borrowed from [euler](https://github.com/YoungNeer/euler)
 function round(value,precision)
 	local temp = 10^(precision or 0)	
@@ -85,7 +94,7 @@ function animx.newAnimation(params)
 
 	if type(params)=='string' then
 		--Overload 1
-		img=love.graphics.newImage(params)
+		img=(params)
 		sw,sh=img:getDimensions()
 		quads=animx.newAnimationXML(img,removeExtension(params,true)..'.xml')
 		startingFrame,delay=1,.1
@@ -93,7 +102,7 @@ function animx.newAnimation(params)
 		--Overload 2
 		img=params.img or params.source or params.image or params.texture or params.atlas or params.spritesheet
 		assert(img,"animX Error: Expected Image or URI in `newAnimation`!")
-		img = type(img)=='string' and love.graphics.newImage(img) or img
+		img = type(img)=='string' and newImage(img) or img
 
 		sw=params.sw or params.imgWidth or params.textureWidth or img:getWidth()
 		sh=params.sh or params.imgHeight or params.textureHeight or img:getHeight()
@@ -255,7 +264,7 @@ function animx.newActor(arg)
 	setmetatable(actor,{__index=Actor}):init()
 	if type(arg)=='string' then
 		--User gave us a link to the XML file
-		local img=love.graphics.newImage(arg)
+		local img=newImage(arg)
 		local anims=animx.newActorXML(img,removeExtension(arg,true)..'.xml')
 		for i in pairs(anims) do
 			actor:addAnimation(i,{
@@ -456,3 +465,4 @@ love.update=function(dt) animx.update(dt) end
 animx.newAnimatedSprite=animx.newActor
 
 return animx
+
