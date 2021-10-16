@@ -79,7 +79,7 @@ Since this image is symmetric we don't even need the metafile as demonstrated in
 ```lua
 animx=require 'animx'
 
-samurai=animx.newActor('res/spritesheet.png'):switch('running')
+samurai=animx.newActor('res/spritesheet.png'):switch('walking')
 
 function love.draw()
 	--This will display our Samurai running at the center of the screen
